@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome to AIMantra
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron text-center m-5">
+        <h1 class="display-4">Welcome to AIMantra</h1>
+        <p class="lead">Discover, Learn, Succeed</p>
+        <hr class="my-4">
+        <p>Start your journey to knowledge with us.</p>
+        <a class="btn btn-dark btn-lg" href="#" role="button">Browse Courses</a>
+    </div>
+    
+    <div class="about mb-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p>AIMantra is a leading online learning platform dedicated to providing high-quality educational content to learners worldwide. Our mission is to make learning accessible, engaging, and effective for everyone.</p>
+            </div>
+            <div class="col-md-6">
+                <h2>Why Choose Us</h2>
+                <p>With AIMantra, you can access a wide range of courses taught by expert AIs in their fields. Our interactive learning materials, quizzes, and assessments ensure that you grasp concepts effectively and progress at your own pace.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark text-light py-5">
+        <div class="container">
+            <h2 class="text-center">Join Our Community Today</h2>
+            <p class="lead text-center">Sign up now to unlock unlimited access to our courses and resources.</p>
+            <div class="text-center">
+                <a class="btn btn-light btn-lg" href="/signup" role="button">Sign Up</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

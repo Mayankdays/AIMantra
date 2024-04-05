@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin Terminal
+{% endblock %}
+
+{% block content %}
+    <h1>Add Data</h1>
+    <form method="POST">
+        <label for="field1">Board</label>
+        <select id="field1" name="field1" required onchange="updateGrades()">
+            <option value="">Select Board</option>
+            <option value="CBSE">CBSE</option>
+            <option value="ICSE">ICSE</option>
+        </select><br>
+        
+        <label for="field2">Grade</label>
+        <select id="field2" name="field2" required>
+            <option value="">Select Grade</option>
+        </select><br>
+
+        <label for="field2">Subject</label>
+        <input type="text" id="field2" name="field3" required><br>
+
+        <label for="field2">Chapter</label>
+        <input type="text" id="field2" name="field4" required><br>
+
+        <label for="field2">Chapter link</label>
+        <input type="text" id="field2" name="field5" required><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function updateGrades() {
+            var boardSelect = document.getElementById('field1');
+            var gradeSelect = document.getElementById('field2');
+        
+            // Clear existing options
+            gradeSelect.innerHTML = '<option value="">Select Grade</option>';
+        
+            // Get selected board
+            var selectedBoard = boardSelect.value;
+        
+            // Define grades based on selected board
+            var gradesMap = {
+                'CBSE': ['9th', '10th', '11th', '12th'],
+                'ICSE': ['6th', '7th', '8th', '9th', '10th']
+                // Add more grades for other boards as needed
+            };
+        
+            // Add grades options based on selected board
+            gradesMap[selectedBoard].forEach(function(grade) {
+                var option = document.createElement('option');
+                option.value = grade;
+                option.textContent = grade;
+                gradeSelect.appendChild(option);
+            });
+        }
+        </script>
+{% endblock %}

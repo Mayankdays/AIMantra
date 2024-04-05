@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin Terminal
+{% endblock %}
+
+{% block content %}
+   <h1>Admin Dashboard</h1>
+   <table>
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Board</th>
+               <th>Grade</th>
+               <th>Subject</th>
+               <th>Chapters</th>
+               <th>Links</th>
+           </tr>
+       </thead>
+       <tbody>
+           {% for row in rows %}
+               <tr>
+                   <td>{{ row[0] }}</td>
+                   <td>{{ row[1] }}</td>
+                   <td>{{ row[2] }}</td>
+                   <td>{{ row[3] }}</td>
+                   <td>{{ row[4] }}</td>
+                   <td>{{ row[5] }}</td>
+                   <td>
+                       <a href="/admin/edit/{{ row[0] }}">Edit</a>
+                       <form method="POST" action="/admin">
+                            <input type="hidden" name="delete_id" value="{{ row[0] }}">
+                            <button type="submit">Delete</button>
+                        </form>
+                   </td>
+               </tr>
+           {% endfor %}
+       </tbody>
+   </table>
+{% endblock %}
