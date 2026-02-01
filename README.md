@@ -1,10 +1,10 @@
 # AIMantra
 
-Guys this ma bot :3 :3 :3
+Guys this my bot.
 
-You guys have to open a codespace otherwise you cant really run this shi. there is a 
+You guys have to open a codespace otherwise you cant really run this. 
 
-Basically what you fucks have to do is to put this stuff in the terminal:
+Basically what you guys have to do is to put this stuff in the terminal:
 ```bash
 $ pip install dotenv flask markdown
 ```
